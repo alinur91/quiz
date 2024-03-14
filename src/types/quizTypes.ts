@@ -23,22 +23,21 @@ export enum ImageSizes {
 
 export type QuizContextType = {
   status: Status;
-  setQuizStatusToReady: () => void;
-  setQuizStatusToActive: () => void;
-  setQuizStatusToFinished: () => void;
+  startTheQuiz: (technologyName: Technologies) => void;
 };
 
 export type State = {
   status: Status;
+  quizTechnologyName: Technologies | null;
 };
 
 export enum ActionType {
-  SET_STATUS = "SET_STATUS",
+  START_QUIZ = "START_QUIZ",
   TOGGLE_TODO = "TOGGLE_TODO",
 }
 
 export type Action =
-  | { type: ActionType.SET_STATUS; payload: Status }
+  | { type: ActionType.START_QUIZ; payload: Technologies }
   | { type: "TOGGLE_TODO"; payload: { id: number } };
 
 export type QuizProviderProps = {

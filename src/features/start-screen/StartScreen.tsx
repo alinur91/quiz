@@ -1,11 +1,10 @@
-import Headings from "./Headings";
-import TechnologieImages from "./TechnologyImages";
+import { TechnologyImages, Headings } from "./";
 
 const StartScreen = () => {
   return (
-    <div className="space-y-4 text-center font-bold tracking-wider text-white">
+    <div className="space-y-4  font-bold tracking-wider text-white">
       <Headings />
-      <TechnologieImages/>
+      <TechnologyImages className="pt-6" />
     </div>
   );
 };
