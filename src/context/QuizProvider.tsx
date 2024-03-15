@@ -15,16 +15,16 @@ export const QuizProvider = ({ children }: QuizProviderProps) => {
   ] = useReducer(quizReducer, initialState);
 
   const startTheQuiz = (quizInfo: QuestionCategory) => {
-    dispatch({ type: ActionType.START_QUIZ, payload: quizInfo });
+    dispatch({ type: ActionType.START_THE_QUIZ, payload: quizInfo });
   };
 
   const exitTheQuiz = () => {
-    dispatch({ type: ActionType.EXIT_QUIZ });
+    dispatch({ type: ActionType.EXIT_THE_QUIZ });
   };
 
-   const finishTheQuiz = () => {
-     dispatch({ type: ActionType.FINISH_QUIZ });
-   };
+  const finishTheQuiz = () => {
+    dispatch({ type: ActionType.FINISH_THE_QUIZ });
+  };
 
   const giveTheAnswer = (answer: number, isAnswerCorrect: boolean) => {
     dispatch({

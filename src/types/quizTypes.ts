@@ -61,17 +61,17 @@ export type State = {
 };
 
 export enum ActionType {
-  START_QUIZ = "START_QUIZ",
-  EXIT_QUIZ = "EXIT_QUIZ",
-  FINISH_QUIZ = "FINISH_QUIZ",
+  START_THE_QUIZ = "START_THE_QUIZ",
+  EXIT_THE_QUIZ = "EXIT_QUIZ",
+  FINISH_THE_QUIZ = "FINISH_QUIZ",
   NEXT_QUESTION = "NEXT_QUESTION",
   ANSWER_IS_GIVEN = "ANSWER_IS_GIVEN",
 }
 
 export type Action =
-  | { type: ActionType.START_QUIZ; payload: QuestionCategory }
-  | { type: ActionType.EXIT_QUIZ }
-  | { type: ActionType.FINISH_QUIZ }
+  | { type: ActionType.START_THE_QUIZ; payload: QuestionCategory }
+  | { type: ActionType.EXIT_THE_QUIZ }
+  | { type: ActionType.FINISH_THE_QUIZ }
   | { type: ActionType.NEXT_QUESTION }
   | {
       type: ActionType.ANSWER_IS_GIVEN;

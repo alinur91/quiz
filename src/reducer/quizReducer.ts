@@ -12,13 +12,13 @@ export const initialState: State = {
 
 export const quizReducer = (state: State, action: Action): State => {
   switch (action.type) {
-    case ActionType.START_QUIZ:
+    case ActionType.START_THE_QUIZ:
       return {
         ...state,
         status: Status.active,
         quizInfo: action.payload,
       };
-    case ActionType.EXIT_QUIZ:
+    case ActionType.EXIT_THE_QUIZ:
       return {
         ...state,
         status: Status.ready,
@@ -26,7 +26,7 @@ export const quizReducer = (state: State, action: Action): State => {
         answer: null,
         points: 0,
       };
-    case ActionType.FINISH_QUIZ:
+    case ActionType.FINISH_THE_QUIZ:
       return {
         ...state,
         status: Status.finished,

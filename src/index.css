@@ -58,3 +58,18 @@ progress {
   background-color: rgb(141, 71, 190);
   border-radius: 100px;
 }
+
+/* For Chrome, Safari, and Opera */
+/* Change color and make scrollbar thinner */
+::-webkit-scrollbar {
+  width: 10px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: purple; /* color of the scrollbar */
+  border-radius: 3px; /* roundness of the scrollbar thumb */
+}

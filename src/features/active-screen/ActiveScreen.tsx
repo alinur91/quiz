@@ -10,7 +10,12 @@ const ActiveScreen = () => {
 
   if (!quizInfo?.imageSrc) return;
 
-  const lastQuestion = quizInfo.questions.length - 1 === index;
+  const { questions } = quizInfo;
+  const totalQuestions = questions.length;
+
+  const isLastQuestion = index === totalQuestions - 1;
+
+  const totalSecondsForQuiz = getTotalSecondsForQuiz(totalQuestions);
 
   return (
     <div className="space-y-10 text-sm md:text-lg">
@@ -20,18 +25,16 @@ const ActiveScreen = () => {
           size={ImageSizes.medium}
           isReactLogo={quizInfo?.technologyName === Technologies.react}
         />
-        <CountdownTimer
-          seconds={getTotalSecondsForQuiz(quizInfo.questions.length)}
-        />
+        <CountdownTimer seconds={totalSecondsForQuiz} />
       </div>
       <ProgressBar />
       <Question />
-      <div className="flex justify-between">
+      <div className="flex items-center justify-between">
         <Button onClick={exitTheQuiz}>Exit</Button>
-        {answer === null || lastQuestion ? null : (
+        {!isLastQuestion && answer !== null && (
           <Button onClick={nextQuestion}>Next</Button>
         )}
-        {lastQuestion && answer !== null && (
+        {isLastQuestion && answer !== null && (
           <Button onClick={finishTheQuiz}>Finish</Button>
         )}
       </div>
