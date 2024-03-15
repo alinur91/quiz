@@ -6,10 +6,12 @@ function App() {
   const { status } = useQuiz();
 
   return (
-    <div className="flex items-center justify-center py-8 text-center">
-      {status === Status.ready && <StartScreen />}
-      {status === Status.active && <ActiveScreen />}
-      {status === Status.finished && <FinishedScreen />}
+    <div className="flex  items-center justify-center px-14 py-8 ">
+      <div className="w-[25rem] md:w-[40rem]">
+        {status === Status.ready && <StartScreen />}
+        {status === Status.active && <ActiveScreen />}
+        {status === Status.finished && <FinishedScreen />}
+      </div>
     </div>
   );
 }

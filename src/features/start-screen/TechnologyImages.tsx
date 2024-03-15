@@ -15,7 +15,7 @@ const TechnologyImages = ({ className = "" }: TechnologyImagesProps) => {
       {Object.values(questions).map((question) => (
         <li
           key={question.imageSrc}
-          onClick={() => startTheQuiz(question.technologyName)}
+          onClick={() => startTheQuiz(question)}
           className="bg-gradient flex cursor-pointer justify-center rounded-xl bg-gradient-to-l from-blue-800 via-indigo-900 to-purple-900 bg-no-repeat py-3 hover:bg-gradient-to-r md:py-5"
         >
           <Image

@@ -7,6 +7,7 @@
       "@data/*": ["src/data/*"],
       "@context/*": ["src/context/*"],
       "@ts-types/*": ["src/types/*"],
+      "@utils/*": ["src/utils/*"],
     },
     "target": "ES2020",
     "useDefineForClassFields": true,

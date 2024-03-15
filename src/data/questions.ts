@@ -1,12 +1,7 @@
-import react from "../data/images/react.png";
-import js from "../data/images/js.png";
-import html from "../data/images/html.png";
-import python from "../data/images/python.png";
-import cplusplus from "../data/images/c++.png";
-import java from "../data/images/java.png";
-import { Technologies } from "../types/quizTypes";
+import { Questions, Technologies } from "@ts-types/quizTypes";
+import { react, js, html, python, cplusplus, java } from "@data/index";
 
-export const questions = {
+export const questions: Questions = {
   REACT: {
     technologyName: Technologies.react,
     imageSrc: react,

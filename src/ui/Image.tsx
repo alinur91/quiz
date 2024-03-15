@@ -9,7 +9,7 @@ type ImageProps = {
 const Image = ({ src, size, isReactLogo }: ImageProps) => {
   const imageSizeClasses = {
     [ImageSizes.small]: "h-20",
-    [ImageSizes.medium]: "h-36",
+    [ImageSizes.medium]: "h-20 md:h-32",
     [ImageSizes.large]: "h-52",
   };
 

@@ -12,6 +12,7 @@ export default defineConfig({
       "@data": path.resolve(__dirname, "src/data"),
       "@context": path.resolve(__dirname, "src/context"),
       "@ts-types": path.resolve(__dirname, "src/types"),
+      "@utils": path.resolve(__dirname, "src/utils"),
     },
   },
 });
