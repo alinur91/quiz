@@ -13,6 +13,7 @@ export default defineConfig({
       "@context": path.resolve(__dirname, "src/context"),
       "@ts-types": path.resolve(__dirname, "src/types"),
       "@utils": path.resolve(__dirname, "src/utils"),
+      "@reducer": path.resolve(__dirname, "src/reducer"),
     },
   },
 });

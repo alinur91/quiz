@@ -3,10 +3,10 @@ import {
   QuestionCategory,
   QuizContextType,
   QuizProviderProps,
-} from "../types/quizTypes";
-import { initialState, quizReducer } from "../reducer/quizReducer";
+} from "@ts-types/quizTypes";
+import { initialState, quizReducer } from "@reducer/quizReducer";
 import { useReducer } from "react";
-import { QuizContext } from "./quizContext";
+import { QuizContext } from "@context/quizContext";
 
 export const QuizProvider = ({ children }: QuizProviderProps) => {
   const [
@@ -22,8 +22,8 @@ export const QuizProvider = ({ children }: QuizProviderProps) => {
     dispatch({ type: ActionType.EXIT_THE_QUIZ });
   };
 
-  const finishTheQuiz = () => {
-    dispatch({ type: ActionType.FINISH_THE_QUIZ });
+  const compleTheQuiz = () => {
+    dispatch({ type: ActionType.COMPLETE_THE_QUIZ });
   };
 
   const giveTheAnswer = (answer: number, isAnswerCorrect: boolean) => {
@@ -37,6 +37,10 @@ export const QuizProvider = ({ children }: QuizProviderProps) => {
     dispatch({ type: ActionType.NEXT_QUESTION });
   };
 
+  const restartTheQuiz = () => {
+    dispatch({ type: ActionType.RESTART_THE_QUIZ });
+  };
+
   const value: QuizContextType = {
     status,
     startTheQuiz,
@@ -46,7 +50,8 @@ export const QuizProvider = ({ children }: QuizProviderProps) => {
     answer,
     giveTheAnswer,
     nextQuestion,
-    finishTheQuiz,
+    compleTheQuiz,
+    restartTheQuiz,
     points,
     pointsPerCorrectAnswer,
   };

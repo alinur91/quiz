@@ -41,7 +41,8 @@ export type QuizContextType = {
   status: Status;
   startTheQuiz: (technologyName: QuestionCategory) => void;
   exitTheQuiz: () => void;
-  finishTheQuiz: () => void;
+  compleTheQuiz: () => void;
+  restartTheQuiz: () => void;
   nextQuestion: () => void;
   giveTheAnswer: (answer: number, isAnswerCorrect: boolean) => void;
   answer: null | number;
@@ -63,7 +64,8 @@ export type State = {
 export enum ActionType {
   START_THE_QUIZ = "START_THE_QUIZ",
   EXIT_THE_QUIZ = "EXIT_QUIZ",
-  FINISH_THE_QUIZ = "FINISH_QUIZ",
+  COMPLETE_THE_QUIZ = "COMPLETE_THE_QUIZ",
+  RESTART_THE_QUIZ = "RESTART_THE_QUIZ",
   NEXT_QUESTION = "NEXT_QUESTION",
   ANSWER_IS_GIVEN = "ANSWER_IS_GIVEN",
 }
@@ -71,8 +73,9 @@ export enum ActionType {
 export type Action =
   | { type: ActionType.START_THE_QUIZ; payload: QuestionCategory }
   | { type: ActionType.EXIT_THE_QUIZ }
-  | { type: ActionType.FINISH_THE_QUIZ }
+  | { type: ActionType.COMPLETE_THE_QUIZ }
   | { type: ActionType.NEXT_QUESTION }
+  | { type: ActionType.RESTART_THE_QUIZ }
   | {
       type: ActionType.ANSWER_IS_GIVEN;
       payload: { answer: number; isAnswerCorrect: boolean };

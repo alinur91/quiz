@@ -8,6 +8,7 @@
       "@context/*": ["src/context/*"],
       "@ts-types/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
+      "@reducer/*": ["src/reducer/*"],
     },
     "target": "ES2020",
     "useDefineForClassFields": true,

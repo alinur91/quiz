@@ -1,6 +1,5 @@
 import { useQuiz } from "@context/quizContext";
-import { FaCheck } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
+import { FaCheck, IoClose } from "@utils/icons";
 
 type OptionProp = {
   option: string;

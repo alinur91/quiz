@@ -2,10 +2,10 @@ import { useQuiz } from "@context/quizContext";
 import { ImageSizes, Technologies } from "@ts-types/quizTypes";
 import { CountdownTimer, ProgressBar, Question } from "./";
 import { Button, Image } from "@ui/index";
-import { getTotalSecondsForQuiz } from "@utils/helpers";
+import { calculateTotalSecondsForQuiz } from "@utils/helpers";
 
 const ActiveScreen = () => {
-  const { quizInfo, exitTheQuiz, nextQuestion, answer, index, finishTheQuiz } =
+  const { quizInfo, exitTheQuiz, nextQuestion, answer, index, compleTheQuiz } =
     useQuiz();
 
   if (!quizInfo?.imageSrc) return;
@@ -15,7 +15,7 @@ const ActiveScreen = () => {
 
   const isLastQuestion = index === totalQuestions - 1;
 
-  const totalSecondsForQuiz = getTotalSecondsForQuiz(totalQuestions);
+  const totalSecondsForQuiz = calculateTotalSecondsForQuiz(totalQuestions);
 
   return (
     <div className="space-y-10 text-sm md:text-lg">
@@ -31,11 +31,12 @@ const ActiveScreen = () => {
       <Question />
       <div className="flex items-center justify-between">
         <Button onClick={exitTheQuiz}>Exit</Button>
-        {!isLastQuestion && answer !== null && (
-          <Button onClick={nextQuestion}>Next</Button>
-        )}
-        {isLastQuestion && answer !== null && (
-          <Button onClick={finishTheQuiz}>Finish</Button>
+        {answer !== null && (
+          <Button
+            onClick={() => (isLastQuestion ? compleTheQuiz() : nextQuestion())}
+          >
+            {isLastQuestion ? "Finish" : "Next"}
+          </Button>
         )}
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { QuizContextType } from "../types/quizTypes";
+import { QuizContextType } from "@ts-types/quizTypes";
 
 export const QuizContext = createContext<QuizContextType | undefined>(
   undefined

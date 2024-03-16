@@ -1,5 +1,5 @@
 /* eslint-disable no-case-declarations */
-import { State, Action, Status, ActionType } from "../types/quizTypes";
+import { State, Action, Status, ActionType } from "@ts-types/quizTypes";
 
 export const initialState: State = {
   status: Status.ready,
@@ -25,13 +25,7 @@ export const quizReducer = (state: State, action: Action): State => {
         index: 0,
         answer: null,
         points: 0,
-      };
-    case ActionType.FINISH_THE_QUIZ:
-      return {
-        ...state,
-        status: Status.finished,
-        index: 0,
-        answer: null,
+        quizInfo: null,
       };
     case ActionType.NEXT_QUESTION:
       return {
@@ -48,6 +42,15 @@ export const quizReducer = (state: State, action: Action): State => {
         answer,
         points: isAnswerCorrect ? points + pointsPerCorrectAnswer : points,
       };
+    case ActionType.COMPLETE_THE_QUIZ:
+      return {
+        ...state,
+        status: Status.finished,
+        index: 0,
+        answer: null,
+      };
+    case ActionType.RESTART_THE_QUIZ:
+      return initialState;
     default:
       return state;
   }
