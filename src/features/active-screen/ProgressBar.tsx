@@ -1,9 +1,12 @@
 import { useQuiz } from "@context/quizContext";
+import { calculateMaxPoints } from "@utils/helpers";
 
 const ProgressBar = () => {
   const { index, quizInfo, points, pointsPerCorrectAnswer } = useQuiz();
   const totalQuestions = quizInfo?.questions.length || 0;
   const progressBarValue = index + 1;
+
+  const maxPoints = calculateMaxPoints(totalQuestions, pointsPerCorrectAnswer);
 
   return (
     <header className="mb-18 grid grid-cols-[auto,auto] justify-between gap-5">
@@ -17,7 +20,7 @@ const ProgressBar = () => {
       </p>
 
       <p className="text-white">
-        <strong>{points}</strong> / {totalQuestions * pointsPerCorrectAnswer}
+        <strong>{points}</strong> / {maxPoints}
       </p>
     </header>
   );
