@@ -1,7 +1,6 @@
 import { useQuiz } from "@context/quizContext";
 import { ImageSizes, Technologies } from "@ts-types/quizTypes";
 import Button from "@ui/Button";
-import Headings from "@ui/Headings";
 import Image from "@ui/Image";
 import {
   calculateCorrectAnswersPercentage,
@@ -42,12 +41,12 @@ const FinishedScreen = () => {
       />
 
       {/* Display user's score and feedback */}
-      <Headings className="text-md text-center text-white md:text-xl">
+      <div className="text-md text-center text-white md:text-xl">
         <h2>
           You Scored {points} out of {maxPoints} ({correctAnswersPercentage}%)
         </h2>
         <h2 className="flex items-center gap-2">{feedbackText} </h2>
-      </Headings>
+      </div>
 
       {/* Button to restart the quiz */}
       <Button
@@ -59,7 +58,7 @@ const FinishedScreen = () => {
       </Button>
 
       {/* Footer with attribution */}
-      <Headings className="text-lg text-yellow-500  md:text-3xl">
+      <footer className="text-lg text-yellow-500  md:text-3xl">
         <h1>
           Designed and Coded By{" "}
           <a
@@ -70,7 +69,7 @@ const FinishedScreen = () => {
             Alisher Nurlybayev
           </a>{" "}
         </h1>
-      </Headings>
+      </footer>
     </div>
   );
 };
